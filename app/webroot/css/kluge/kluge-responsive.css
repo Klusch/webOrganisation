@@ -1,0 +1,90 @@
+/*
+ * Devices
+ * min 1200
+ * min 1024
+ * max 1024
+ * max 768
+ * max 640
+ * max 480
+ * max 320
+ */
+
+/* Desktop */
+@media screen and (min-width: 800px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+/* Large desktop */
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+/* tablet landscape*/
+@media only screen and (max-width: 1024px) {
+}
+
+/* tablet portrait */
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+}
+
+/* Phones landscape*/
+@media only screen and (max-width: 640px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* Phones portrait*/
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  body {
+    font-size: 2.5rem;
+  }
+  
+  #navcontainer { margin-left: 5px; }
+  
+.metro .tile .userbrand {
+  width: auto;
+  height: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  font-size: 2rem;
+}
+
+}
+
+@media only screen and (max-width: 320px) {
+  body {
+    font-size: 2.5rem;
+  }
+  
+  #navcontainer { margin-left: 5px; }
+  
+.metro .tile .userbrand {
+  width: auto;
+  height: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  font-size: 2rem;
+}
+
+}

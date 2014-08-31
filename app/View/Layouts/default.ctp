@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -14,50 +17,91 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
+$cakeDescription = __d('cake_dev', "Alex's little management");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--         <meta name="viewport" content="width=device-width"> -->
+        
+        <title>
+                <?php echo $cakeDescription ?>:
+                <?php echo $title_for_layout."\n"; ?>
+        </title>
 
-		echo $this->Html->css('cake.generic');
+<?php
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+//    <link rel="stylesheet" href="css/style.css"/>
+//	<!-- <link rel="stylesheet" media="print" href="css/print.css"/> -->
+    echo $this->Html->css('jquery-ui-widget/jquery-ui', array('media' => 'screen'))."\n".
+         $this->Html->css('metro/iconFont', array('media' => 'screen'))."\n".
+         $this->Html->css('metro/metro-bootstrap', array('media' => 'screen'))."\n".
+         $this->Html->css('metro/metro-bootstrap-responsive', array('media' => 'screen'))."\n".
+         $this->Html->css('kluge/metro-customized', array('media' => 'screen'))."\n".            
+         $this->Html->css('kluge/kluge', array('media' => 'screen'))."\n".
+         $this->Html->css('kluge/kluge-responsive', array('media' => 'screen'))."\n";
+         
+    echo $this->Html->script('jquery/jquery-1.11.1.js')."\n".
+         $this->Html->script('jquery/jquery-ui-widget-1.11.1.js')."\n".
+         $this->Html->script('metro/metro-loader.js')."\n";
+?>
+
 </head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+<?php 
+   $background = $this->fetch('background');
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+   if ($background == null) {
+       $background = $this->params['controller'];
+   }
+?>
+
+<body class="metro <?php echo $background; ?>">
+
+  <noscript>
+    <div id='flash-message' class='input-control text warning-state' data-role='input-control'>
+        <?php  echo "<input value='".__('You have to activate javascript to use this application')."' type='text'>\n"; ?>
+    </div>
+  </noscript>
+    
+  <header class="bg-default" data-load="" style="margin-top:-14px">
+  <?php
+     $user = $this->Session->read('Auth.User');
+     echo $this->Nav->topBar($user);
+  ?>     
+  </header>
+
+  <div class="container">
+
+    <?php echo $this->Session->flash(); ?>
+    <?php echo $this->fetch('breadCrumbs');?>  
+    
+    <div class="grid fluid">  
+      
+        <div class="row">
+            <div class="span3">
+                <?php echo $this->fetch('leftTiles'); ?> 
+            </div>
+            <div class="span7">
+                <?php echo $this->fetch('content'); ?>
+            </div>
+            <div class="span2">
+                <?php echo $this->fetch('rightTiles'); ?>
+            </div>
+        </div>  
+    </div>  
+      
+ 
+<!-- JavaScript -->
+<!-- global -->
+<?php  echo $this->Html->script('kluge/custom-messages.js') . "\n"; ?>
+<?php  echo $this->Html->script('kluge/content-resizer.js') . "\n"; ?>
+
+<!-- local -->
+<?php echo $this->fetch('pageScripts')."\n";?>
+<!-- End JavaScript -->
+
 </body>
 </html>

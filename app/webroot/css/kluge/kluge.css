@@ -1,0 +1,485 @@
+.Pages,
+.pages{
+    background-color:#321f5e !important;
+}
+
+.PagesLight,
+.pagesLight{
+    background-color:#8652fb !important;
+}
+
+.BasestationAddresses {
+    background-color:#3a1001 !important;
+}
+
+.BasestationAddressesLight {
+    background-color:#741f02 !important;
+}
+
+.BaseStations,
+.InstallUpdates,
+.NetworkConfigurations,
+.RebootOrHalts,
+.WirelessConfigurations {
+    background-color:#3a1001 !important;
+}
+
+.BaseStationsLight,
+.InstallUpdatesLight,
+.NetworkConfigurationsLight,
+.RebootOrHaltsLight,
+.WirelessConfigurationsLight {
+    background-color:#741f02 !important;
+}
+
+.Configurations {
+    background-color:#272727 !important;
+}
+
+.ConfigurationsLight {
+    background-color:#4D4D4D !important;
+}
+
+.Companies,
+.Users {
+    background-color:#013a48 !important;
+}
+
+.CompaniesLight,
+.UsersLight {
+    background-color:#02748f !important;
+}
+
+.Devices,
+.DeviceTypes {
+    background-color:#013a48 !important;
+}
+
+.DevicesLight,
+.DeviceTypesLight {
+    background-color:#02748f !important;
+}
+
+.HygienePoints,
+.HygienePointDefinitions {
+    background-color:#3d5b0e !important;
+}
+
+.HygienePointsLight,
+.HygienePointDefinitionsLight {
+    background-color:#79b51c !important;
+}
+
+.Locations,
+.LocationDefinitions,
+.Overviews,
+.OverviewWorkers {
+    background-color:#003b5F !important;
+}
+
+.LocationsLight,
+.LocationDefinitionsLight,
+.OverviewsLight,
+.OverviewWorkersLight {
+    background-color:#0076BD !important;
+}
+
+
+.MountPoints {
+    background-color:#00233f !important;
+}
+
+.MountPointsLight {
+    background-color:#003f71 !important;
+}
+
+.OneTimeLogin,
+.Login {
+    background-color:#4D4D4D !important;
+}
+
+.Reports {
+    background-color:#282c01 !important;
+}
+
+.ReportsLight {
+    background-color:#505801 !important;
+}
+
+.CleaningGroups {
+    background-color:#5b2b01 !important;
+}
+
+.CleaningGroupsLight {
+    background-color:#f57303 !important;
+}
+
+.Responsibilities {
+    background-color:#3f4700 !important;
+}
+
+.ResponsibilitiesLight {
+    background-color:#7d8e00 !important;
+}
+
+.TourDefinitions {
+    background-color:#321f5e !important;
+}
+
+.TourDefinitionsLight {
+    background-color:#8652fb !important;
+}
+
+.Tours {
+    background-color:#713f7f !important;
+}
+
+.ToursLight, .fc-state-active, .fc-state-default {
+    background-color:#e27dfd !important;
+}
+
+.ToursLight, .fc-state-highlight {
+    background-color:#713f7f !important;
+}
+
+.ToursLight, .fc-event-inner {
+    color: white
+}
+
+.ToursLight, .fc-event {
+   border: 1px solid white  !important;
+   background: #713f7f !important;
+}
+
+.ToursLight {
+    background-color:#e27dfd !important;
+}
+
+.TourChecklists,
+.LocationChecklists {
+    background-color:#713f7f !important;
+}
+
+.TourChecklistsLight,
+.LocationChecklistsLight {
+    background-color:#e27dfd !important;
+}
+
+.Transparent {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.BaseStationOK {
+    background-color:greenyellow !important;
+}
+
+.BaseStationFail {
+    background-color:orangered !important;
+}
+
+
+form .error-message {
+	color: #ff0000;
+}
+
+.left { float: left; width: 10%; height: 100%; border: 1px solid; }
+.right { float: right; width: 90%; height: 100%; }
+
+.headlines {
+  position: relative;
+  display: block;
+  float: left;
+  height: 120px;
+  width: 55%;
+}
+
+.headlinespan {
+   position: absolute;
+   bottom: 30px;
+   left: 0;
+   text-align: left;
+}
+
+.filter {
+    width:200px;
+    margin: 0 0 0 auto;
+}
+
+.searchfield {
+    background-color: transparent;
+}
+
+.metro .tile .userbrand {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 260px;
+  height: 120px;
+  margin: 0;
+  background-color: #003f71 !important;
+  padding: 5px;
+  color: #ffffff;
+}
+
+/* ============= NAVIGATION =========== */
+#navcontainer { margin-left: 5px; }
+
+#navlist
+{
+list-style: none;
+padding: 0;
+margin: 0;
+color: #ffffff;
+}
+
+#navlist li
+{
+display: inline;
+padding: 0;
+margin: 0;
+color: #ffffff !important;
+}
+
+#navlist li:before { content: "> "; }
+#navlist li:first-child:before { content: ""; }
+
+#navlist a, link {
+    color: #FFFFFF;
+}
+
+* html #navlist li
+{
+display: block;
+float: left;
+}
+
+/*End hide*/
+/*Mac IE 5*/
+* html #navlist li:first-child { background-image: none; }
+
+/* ====^^======== NAVIGATION =====^^==== */
+
+
+
+#filter-input {
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: 18;
+}
+
+#filter-container{
+    height: 100%;
+}
+
+#filter-icon {
+    position:absolute;
+    height: 80%;
+    bottom: 40%;
+    margin-top: -4%;
+    z-index: 10;
+}
+
+.responsibilityDetail {
+    border: 1px #000000 solid;
+}
+
+.responsibilityDetail .reorderState {
+    margin: 15px;
+    position: relative;
+}
+
+.responsibilityDetail .rdBreadcrumb{
+    margin: 15px;
+    position: relative;
+}
+
+.responsibilityDetail .rdTitle{
+    margin: 15px;
+   position: relative;
+}
+
+.responsibilityDetail .rdPossibilitySelection{
+    margin: 15px;
+    position: relative;
+}
+
+.responsibilityDetail .rdExpectedDuration{
+    margin: 15px;
+   position: relative;
+   font-size: 10px;
+   float: right;
+}
+
+.responsibilityDetail .rdConfirmationRequired{
+    margin: 15px;
+    position: relative;
+    font-size: 10px;
+    float: right;
+}
+
+.responsibilityDetail .rdMoveButtons{
+    margin: 15px;
+    position: relative;
+    top: 10px;
+}
+
+.responsibilityDetailAction{
+    margin: 15px;
+    color: green;
+    font-size: 10px;
+}
+
+.plot-timescale-switch{
+    margin: 15px;
+    float: right;
+}
+
+.metro .tile.quadro-vertical.small {
+  height: 55px;
+}
+
+.metro .tile.quadro-vertical.midi {
+  height: 120px;
+}
+
+.metro .tile.quadro-vertical.large {
+  height: 250px;
+}
+
+.metro .tile.quadro-vertical.xlarge {
+  height: 380px;
+}
+
+.metro .input-control.text .txt-filter {
+  color: #ffffff;
+}
+
+.metro .input-control.text .btn-filter {
+  background-color: #F0F0F0;
+  position: absolute;
+  top: 5px;
+  z-index: 2;
+  border: 0;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  min-height: 1px;
+  min-width: 1px;
+  padding: 0;
+  margin: 0;
+  display: block;
+  background: url('../img/small/navigation/filter.png') 0 0 no-repeat;
+}
+
+.metro .input-control.text .btn-filter:after {
+  font-family: iconFont;
+  font-size: 10pt;
+}
+
+.metro .input-control.text .btn-filter:not(:disabled):active {
+  background-color: #1d1d1d;
+  color: #ffffff;
+}
+
+.metro .input-control.text .btn-filter:active {
+  left: auto;
+}
+
+.metro .input-control.text .btn-filter:focus {
+  outline: 1px #ccc dotted ;
+}
+
+.metro .button.submit {
+  padding-right: 30px;
+  text-align: left;
+  background: url('../img/small/navigation/okay.png') 0 0 no-repeat;
+  background-position: right;
+}
+
+.metro .button.delete {
+  padding-right: 30px;
+  text-align: left;
+  background: url('../img/small/navigation/trash.png') 0 0 no-repeat;
+  background-position: right;
+}
+
+.metro .button.unassign {
+  padding-right: 30px;
+  text-align: left;
+  background: url('../img/small/navigation/unassign.png') 0 0 no-repeat;
+  background-position: right;
+}
+
+.metro .button.select_all {
+  padding-right: 30px;
+  text-align: left;
+  background: url('../img/small/navigation/select_all.png') 0 0 no-repeat;
+  background-position: right;
+}
+
+.metro .button.toggle_selection {
+  padding-right: 30px;
+  text-align: left;
+  background: url('../img/small/navigation/toggle_selection.png') 0 0 no-repeat;
+  background-position: right;
+}
+
+.metro .button.locked {
+  padding-right: 30px;
+  text-align: left;
+  background: url('../img/small/navigation/locked.png') 0 0 no-repeat;
+  background-position: right;
+}
+
+.metro .button.unlocked {
+  padding-right: 30px;
+  text-align: left;
+  background: url('../img/small/navigation/unlocked.png') 0 0 no-repeat;
+  background-position: right;
+}
+
+.metro .button.arrow_up {
+  padding: 5px;
+  background: url('../img/small/navigation/arrow_up.png') 0 0 no-repeat;
+  background-position: center;
+}
+
+.metro .button.row_arrow_up {
+  padding: 5px;
+  margin-left: 0px;
+  margin-top: 50px;
+  background: url('../img/small/navigation/arrow_up.png') 0 0 no-repeat;
+  background-position: center;
+}
+
+.metro .button.arrow_down {
+  padding: 5px;
+  background: url('../img/small/navigation/arrow_down.png') 0 0 no-repeat;
+  background-position: center;
+}
+
+.metro .button.row_arrow_down {
+  padding: 5px;
+  margin-left: 0px;
+  margin-top: 50px;
+  background: url('../img/small/navigation/arrow_down.png') 0 0 no-repeat;
+  background-position: center;
+}
+
+.metro .accordion.with-marker .heading:before {
+  border-bottom: 7px solid white;
+}
+
+.metro .schedule h3,
+.metro .schedule li {
+  color: #ffffff;
+}
+
+.metro .info,
+.mobile .info {
+  color: #ffffff;
+  width: 100%;
+}
