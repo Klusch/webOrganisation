@@ -17,7 +17,6 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 App::uses('AppController', 'Controller');
 
 /**
@@ -46,8 +45,12 @@ class PagesController extends AppController {
  *	or MissingViewException in debug mode.
  */
 	public function display() {
+		$this->layout = 'start_layout';
+		
 		$path = func_get_args();
 
+		$menues = $this->Page->getMenues();
+		
 		$count = count($path);
 		if (!$count) {
 			return $this->redirect('/');
@@ -63,7 +66,7 @@ class PagesController extends AppController {
 		if (!empty($path[$count - 1])) {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
-		$this->set(compact('page', 'subpage', 'title_for_layout'));
+		$this->set(compact('page', 'subpage', 'title_for_layout', 'menues'));
 
 		try {
 			$this->render(implode('/', $path));

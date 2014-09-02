@@ -1,8 +1,5 @@
 <?php
 
-//define('IND', (PHP_SAPI == 'cli') ? PHP_EOL : '                                          ');
-//define('IND2', (PHP_SAPI == 'cli') ? PHP_EOL : '                                    ');
-
 // http://advitum.de/2013/05/cakephp-tutorial-views-layouts-und-helpers/
 App::uses('AclComponent', 'Controller/Component');
 

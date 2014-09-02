@@ -17,13 +17,14 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'Hagleitner Sense Management');
+$cakeDescription = __d('cake_dev', "Alex's little management");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--         <meta name="viewport" content="width=device-width"> -->
         
         <title>
                 <?php echo $cakeDescription ?>:
@@ -31,6 +32,9 @@ $cakeDescription = __d('cake_dev', 'Hagleitner Sense Management');
         </title>
 
 <?php
+
+//    <link rel="stylesheet" href="css/style.css"/>
+//	<!-- <link rel="stylesheet" media="print" href="css/print.css"/> -->
     echo $this->Html->css('jquery-ui-widget/jquery-ui', array('media' => 'screen'))."\n".
          $this->Html->css('metro/iconFont', array('media' => 'screen'))."\n".
          $this->Html->css('metro/metro-bootstrap', array('media' => 'screen'))."\n".
@@ -56,8 +60,6 @@ $cakeDescription = __d('cake_dev', 'Hagleitner Sense Management');
 
 <body class="metro <?php echo $background; ?>">
 
-   
-    
   <noscript>
     <div id='flash-message' class='input-control text warning-state' data-role='input-control'>
         <?php  echo "<input value='".__('You have to activate javascript to use this application')."' type='text'>\n"; ?>
@@ -71,40 +73,27 @@ $cakeDescription = __d('cake_dev', 'Hagleitner Sense Management');
   ?>     
   </header>
 
-  
-   
   <div class="container">
 
     <?php echo $this->Session->flash(); ?>
     <?php echo $this->fetch('breadCrumbs');?>  
+    
+    <div class="grid fluid">  
       
-    <!-- Upper menu -->
-    <div class="grid">
-      <?php
-        $tmp = $this->fetch('topTiles');
-        if (!empty($tmp)) {
-           echo "<div class='row'>"
-                        . $this->fetch('topTiles') .
-                "</div>";
-        }
-      ?> 
-    </div>   
-        
-    <!-- Content-Area -->
-    <div>
-        <div id="contentWithTiles" class="row right" <?php if ($this->fetch('fullSize') == 'true') { echo " style='width:100%'"; } ?>> 
-                <div class='<?php echo $this->params['controller'] ?>' id='content-hgl' style='  
-                    <?php echo ($this->fetch('frameRequest') == 'true') 
-                       ? " padding:15px;"
-                       : " padding:0px; border:0px;"?>'>
-                    <?php echo $this->fetch('content'); ?>
-                </div>
-         </div>
-        <?php echo $this->fetch('dynamicContent'); ?>
-    </div>
-
-  </div>
-  
+        <div class="row">
+            <div class="span3">
+                <?php echo $this->fetch('leftTiles'); ?> 
+            </div>
+            <div class="span7">
+                <?php echo $this->fetch('content'); ?>
+            </div>
+            <div class="span2">
+                <?php echo $this->fetch('rightTiles'); ?>
+            </div>
+        </div>  
+    </div>  
+      
+ 
 <!-- JavaScript -->
 <!-- global -->
 <?php  echo $this->Html->script('kluge/custom-messages.js') . "\n"; ?>

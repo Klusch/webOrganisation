@@ -30,6 +30,10 @@ class ProjectSpecificHelper extends AppHelper {
             'categoryDestination' => array('controller' => 'Banks', 'action' => 'index'),
             'description' => 'Geldanlagen'
         ),
+        'cars' => array('categoryIcon' => 'icon-cars', 'categoryColor' => 'bg-cobalt',
+            'categoryDestination' => array('controller' => 'Cars', 'action' => 'index'),
+            'description' => 'Autos'
+        ),        
         'colors' => array('categoryIcon' => ' icon-rainbow', 'categoryColor' => 'bg-cobalt',
             'categoryDestination' => array('controller' => 'Colors', 'action' => 'index'),
             'description' => 'Farben'
