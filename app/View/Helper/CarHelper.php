@@ -21,30 +21,22 @@ class CarHelper extends AppHelper {
     }
 
     public function carTile($car, $destination = null) {
-/*
+        
         $parameters = array(
-            
-            'title' => $user['User']['username'],
+            'title' => $car['Car']['name'],
             'tile-size' => 'double',
             'destination' => $destination,
             'color' => 'bg-grayLighter',
-            'image' => $this->Html->image($user['Group']['picture_url'], array('alt' => $user['User']['username'], 'height' => '120', 'id' => 'userimage')),
-            'row1' => '<b>' . $user['User']['username'] . '</b>',
-            'row2' => $user['User']['first_name'] . ' ' . $user['User']['last_name'],
-            'row3' => $user['User']['phone'],
-            'row4' => '<i>' . $user['Company']['name'] . '</i>',
-            'row5' => $user['Company']['country'] . ', ' . $user['Company']['zip'] . ' ' . $user['Company']['city'] . '</i>'
+            'image' => $this->Html->image($car['Car']['picture_url'], array('alt' => $car['Car']['name'], 'height' => '120', 'id' => 'carimage')),
+            'text' => $car['Car']['hsn'] . "<br>" . $car['Car']['tsn'] . "<br>" . $car['Car']['modified'] . "<br>" . $car['Car']['created'] . "<br>" . ""
         );
 
-        $text = $parameters['row1'] . "<br>" . $parameters['row2'] . "<br>" . $parameters['row3'] .
-                "<br>" . $parameters['row4'] . "<br>" . $parameters['row5'];
-        
         if ($destination === null) {
-        	return $this->Tile->selectableTile($user['User']['id'], $text, $parameters['image'], $onclickHandler, $selected);
+            return $this->Tile->selectableTile($user['User']['id'], $text, $parameters['image'], $onclickHandler, $selected);
         } else {
-        	return $this->Tile->linkTile('usertile', $text, $destination, $parameters['image']);
+            return $this->Tile->linkTile('usertile', $text, $destination, $parameters['image']);
         }
- */
+
     }
 
     /**

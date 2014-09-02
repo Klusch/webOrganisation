@@ -1,3 +1,13 @@
+CREATE TABLE cars (
+    id            INTEGER AUTO_INCREMENT,
+    name          VARCHAR(100) NOT NULL,    
+    hsn           VARCHAR(5),
+    tsn           VARCHAR(5),
+    modified      DATETIME,
+    created       DATETIME,
+    PRIMARY KEY (id)
+) CHARSET=utf8;
+
 CREATE TABLE tire_types (
     id            INTEGER AUTO_INCREMENT,
     name          VARCHAR(100) NOT NULL,    
@@ -18,7 +28,8 @@ CREATE TABLE tires (
     profile4      DECIMAL(2,1),
     modified      DATETIME,
     created       DATETIME,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY(car_id) REFERENCES cars(id)
 ) CHARSET=utf8;
 
 -- lnk_tires__tire_types
@@ -29,15 +40,6 @@ CREATE TABLE tires_tire_types (
     PRIMARY KEY (id),
     FOREIGN KEY(tire_id) REFERENCES tires(id),
     FOREIGN KEY(tire_type_id) REFERENCES tire_types(id)
-) CHARSET=utf8;
-
-CREATE TABLE problem_locations (
-    id            INTEGER AUTO_INCREMENT,
-    name          VARCHAR(100) NOT NULL,    
-    modified      DATETIME,
-    created       DATETIME,
-    PRIMARY KEY (id),
-    UNIQUE (name)
 ) CHARSET=utf8;
 
 CREATE TABLE shops (
@@ -77,6 +79,15 @@ CREATE TABLE utilities (
     FOREIGN KEY(troubleshooting_id) REFERENCES troubleshootings(id)
 ) CHARSET=utf8;
 
+CREATE TABLE problem_locations (
+    id            INTEGER AUTO_INCREMENT,
+    name          VARCHAR(100) NOT NULL,    
+    modified      DATETIME,
+    created       DATETIME,
+    PRIMARY KEY (id),
+    UNIQUE (name)
+) CHARSET=utf8;
+
 CREATE TABLE colors (
     id            INTEGER AUTO_INCREMENT,
     name          VARCHAR(255) NOT NULL,
@@ -112,16 +123,6 @@ CREATE TABLE problems (
     FOREIGN KEY(troubleshooting_id) REFERENCES troubleshootings(id)
 ) CHARSET=utf8;
 
-CREATE TABLE cars (
-    id            INTEGER AUTO_INCREMENT,
-    name          VARCHAR(100) NOT NULL,    
-    hsn           VARCHAR(5),
-    tsn           VARCHAR(5),
-    modified      DATETIME,
-    created       DATETIME,
-    PRIMARY KEY (id)
-) CHARSET=utf8;
-
 -- lnk_cars__problems
 CREATE TABLE cars_problems (
     id            INTEGER AUTO_INCREMENT,
@@ -132,12 +133,13 @@ CREATE TABLE cars_problems (
     FOREIGN KEY(problem_id) REFERENCES problems(id)
 ) CHARSET=utf8;
 
-CREATE TABLE car_fittings (
+CREATE TABLE fittings (
     id            INTEGER AUTO_INCREMENT,
     car_id        INTEGER,    
-    fitting       VARCHAR(255),
+    name          VARCHAR(255),
     description   VARCHAR(255),
     modified      DATETIME,
     created       DATETIME,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY(car_id) REFERENCES cars(id)
 ) CHARSET=utf8;

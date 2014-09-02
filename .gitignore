@@ -8,11 +8,13 @@
 /build
 /dist
 /tags
-*.mo
+#*.mo
 
 # IDE and editor specific files #
 #################################
 .idea
+/nbproject
+*.php~
 
 # OS generated files #
 ######################
@@ -24,4 +26,5 @@
 Icon?
 ehthumbs.db
 Thumbs.db
-*.php~
+
+

@@ -80,36 +80,6 @@ class CategoryHelper extends AppHelper {
         return "<div class='headlines'><span class='headlinespan'><h2>".$text."</h2></span></div>";
     }
 
-    /**
-     * Creates a category tile with name, image and link.
-     *
-     * @param string $name the text visualized as overlay and tooltip
-     * @param array $destination the controller and action array
-     * @param array $color the tile's color, default is gray
-     * @return string, the category tile
-     */
-    public function namedTile($name = null, $destination = null, $color = 'bg-gray') {
-        $controller = $this->params['controller'];
-        if (isset($destination['controller'])) {
-            $controller = $destination['controller'];
-        }
-        $mySet = $this->getCategorySet($controller);
-
-        $target = '';
-        if (empty($mySet)) {
-            $target = $this->Tile->blank();
-        } else {
-            if (isset($name)) {
-                $mySet['name'] = $name;
-            }
-            $target = $this->getImage($mySet, $color);
-            if (isset($destination['action'])) {
-                $target = $this->Tile->link($mySet['name'], $target, $destination);
-            }
-        }
-        return $target;
-    }
-
     public function getCategorySet($controller) {
         return CategoryHelper::$categorySet[str_replace('_', '', strtolower($controller))];
     }
@@ -130,18 +100,6 @@ class CategoryHelper extends AppHelper {
         return $target;
     }
 
-    public function getCategoryPictureUrl($controller = null) {
-    	if ($controller == null) {
-    		$controller = $this->params['controller'];
-    	}
-    	
-    	$picture_url = '';
-    	$mySet = $this->getCategorySet($controller);
-    	if (isset($mySet['picture_url'])) {
-    		$picture_url = $mySet['picture_url'];
-    	}
-    	return $picture_url;
-    }
 }
 
 ?>

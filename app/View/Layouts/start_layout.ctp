@@ -1,30 +1,11 @@
 <?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = __d('cake_dev', "Alex's little management");
+  $cakeDescription = __d('cake_dev', "Alex's little management");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--         <meta name="viewport" content="width=device-width"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         
         <title>
                 <?php echo $cakeDescription ?>:
@@ -32,20 +13,21 @@ $cakeDescription = __d('cake_dev', "Alex's little management");
         </title>
 
 <?php
-
-//    <link rel="stylesheet" href="css/style.css"/>
-//	<!-- <link rel="stylesheet" media="print" href="css/print.css"/> -->
-    echo $this->Html->css('jquery-ui-widget/jquery-ui', array('media' => 'screen'))."\n".
-         $this->Html->css('metro/iconFont', array('media' => 'screen'))."\n".
-         $this->Html->css('metro/metro-bootstrap', array('media' => 'screen'))."\n".
+    echo "<!-- Metro UI CSS -->\n";
+    echo $this->Html->css('metro/metro-bootstrap', array('media' => 'screen'))."\n".
          $this->Html->css('metro/metro-bootstrap-responsive', array('media' => 'screen'))."\n".
+         $this->Html->css('metro/iconFont', array('media' => 'screen'))."\n";
+         
+    echo $this->Html->css('jquery-ui-widget/jquery-ui', array('media' => 'screen'))."\n".
          $this->Html->css('kluge/metro-customized', array('media' => 'screen'))."\n".            
          $this->Html->css('kluge/kluge', array('media' => 'screen'))."\n".
          $this->Html->css('kluge/kluge-responsive', array('media' => 'screen'))."\n";
          
+    echo "<!-- Load JavaScript Libraries -->\n";
     echo $this->Html->script('jquery/jquery-1.11.1.js')."\n".
-         $this->Html->script('jquery/jquery-ui-widget-1.11.1.js')."\n".
-         $this->Html->script('metro/metro-loader.js')."\n";
+         $this->Html->script('jquery/jquery-ui-widget-1.11.1.js')."\n";
+    echo "<!-- Metro UI CSS JavaScript plugins -->\n";
+    echo $this->Html->script('metro/metro-loader.js')."\n";
 ?>
 
 </head>
@@ -73,18 +55,18 @@ $cakeDescription = __d('cake_dev', "Alex's little management");
   ?>     
   </header>
 
-  <div class="container">
+ <div class="container">
 
     <?php echo $this->Session->flash(); ?>
     <?php echo $this->fetch('breadCrumbs');?>  
     
-    <div class="grid fluid">  
+    <div class="grid show-grid">  
       
         <div class="row">
-            <div class="span3">
+            <div class="span4">
                 <?php echo $this->fetch('leftTiles'); ?> 
             </div>
-            <div class="span7">
+            <div class="span6">
                 <?php echo $this->fetch('content'); ?>
             </div>
             <div class="span2">

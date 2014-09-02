@@ -14,85 +14,7 @@ class AppHelper extends Helper {
     public $helpers = array('Html', 'Form', 'Text');
     public $timeout = 10000;
     public $validationDomain = 'validation';
-    public $accordionFrameSize = 'accordion-frame-size';
     public $dateFormat = 'yyyy-mm-dd';
-    public static $accordionColor = '#e3e3e3';
-
-    public function definitionList($definitions) {
-        return "
-            <dl>
-            " . call_user_func(function ($d) {
-                    $s = "";
-                    array_walk($d, function ($k, $v) use (&$s) {
-                        $s .= "
-                        <dt>
-                           $v
-                        </dt>
-                        <dd>
-                           $k
-                        </dd>
-                    ";
-                    });
-                    return $s;
-                }, $definitions) . "
-            </dl>
-            ";
-    }
-
-    // ================================================================
-    // =========== Javascript code generation =========================
-
-    public function jsMaybe2($x, $a1, $a2, $nothing = "") {
-        if (!isset($x[$a1])) {
-            return $nothing;
-        }
-        if (!isset($x[$a1][$a2])) {
-            return $nothing;
-        }
-        return $x[$a1][$a2];
-    }
-
-    public function jsEntityAssignmentJSON($entityDefinition) {
-        return call_user_func(function($d) {
-            $attr = array();
-            array_walk($d, function ($value, $key) use (&$attr) {
-                array_push($attr, "'$key' : $value");
-            });
-            return "{\n" . implode($attr, ",\n") . "\n}";
-        }, $entityDefinition);
-    }
-
-    public function jsString($s) {
-        return "\"" . trim(preg_replace('/\s\s+/', ' ', $s)) . "\"";
-    }
-
-    public function jsStringConc($s) {
-        return implode(" + ", $s);
-    }
-
-    public function jsSelect($contentClass, $entities, $id, $attribute) {
-        return $this->jsStringConc(array($this->jsString("
-            <select name=data[$contentClass][$id]>"), "
-                (function ($entities) {
-                    var options = \"\";
-                    $($entities).each(function (i, v){
-                        options += " . $this->jsStringConc(array($this->jsString("
-                        <option value=possibility.id>"), "
-                            v.$attribute", $this->jsString("
-                        </option>"))) . "
-                    });
-                    return options;
-                })(this.$contentClass.$entities)", $this->jsString("
-            </select>")));
-    }
-
-    // ================================================================
-    // =========== Hilfsfunktionen ====================================
-
-    public function mobileVersion() {
-        return $this->request->is('mobile');
-        //return true;
-    }
 
     // ================================================================
     // =========== Breadcrumbs & Accordion ============================
@@ -162,9 +84,7 @@ class AppHelper extends Helper {
     // ===========================================================================
 
     /*
-     * This function builds an element for lists
-     * Normally elemnts are surounded by:
-     *     <div class="listview-outlook" data-role="listview"> ... </div>
+     * For future use
      */
     public function listViewElement($image, $destination, $title, $subtitle, $remark) {
         $space = "       ";

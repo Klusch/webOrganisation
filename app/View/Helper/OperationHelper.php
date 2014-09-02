@@ -32,21 +32,6 @@ class OperationHelper extends AppHelper {
 		return $this->action('pencil', 'edit', __('Edit'), $id, $secondId);
 	}
 
-	public function editDetails($id = null) {
-		return $this->action('zoom-in', 'edit_details', __('Edit details'), $id);
-	}
-
-	public function schedule($id = null) {
-		return $this->action('calendar', "schedule", __('Schedule'), $id);
-	}
-
-	public function action($icon, $action, $label, $id = null, $secondId = null, $linkid = null, $disabled = false) {
-		$destination = $disabled ? array() : array('action' => $action . '/' . $id, $secondId);
-
-		$icon = $this->Tile->icon($icon, $label);
-		return $this->actionBase($label, $icon, $destination, $linkid);
-	}
-
 	public function actionAsPicture($icon, $action, $label, $id = null, $secondId = null, $linkid = null, $disabled = false) {
 
 		$destination = array();

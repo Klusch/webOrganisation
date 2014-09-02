@@ -41,18 +41,6 @@ class NavHelper extends AppHelper {
         return "<li id='login' class='place-right'>" . $this->Html->link($name, $destination) . "</li>";
     }
 
-    private function startPoint($user) {
-        $destination = array('controller' => 'pages', 'action' => 'display', 'home');
-
-        if (!empty($user)) {
-            $destination = array('controller' => 'Configurations', 'action' => 'index');
-        }
-
-        return "<li>" .
-                $this->Html->link(__('Home'), $destination) .
-                "</li>\n";
-    }
-
     private function arrayToURLParameter($params) {
         $result = "/";
         foreach ($params as $param) {
